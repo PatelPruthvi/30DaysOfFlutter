@@ -10,10 +10,49 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Catalogue App'),
-        backgroundColor: Colors.deepPurple[600],
       ),
       drawer: Drawer(),
-      body: Center(child: Text('Welcome to 30 days of Flutter...')),
+      backgroundColor: Colors.white,
+      body: Column(
+        children: <Widget>[
+          SizedBox(height: 20),
+          Image.asset(
+            "assets/images/unDraw_login.png",
+            fit: BoxFit.cover,
+          ),
+          SizedBox(height: 20),
+          Text(
+            'Welcome',
+            style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+            child: Column(
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(
+                      hintText: 'example@charusat.edu.in',
+                      labelText: 'E-MAIL',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(60))),
+                ),
+                SizedBox(height: 20),
+                TextFormField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      hintText: 'Enter Password',
+                      labelText: 'PASSWORD',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(60))),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(onPressed: () {}, child: Text('SIGN-IN'))
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
