@@ -1,7 +1,8 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
-import 'package:codepur/home_page.dart';
-import 'package:codepur/login_page.dart';
+import 'package:codepur/pages/home_page.dart';
+import 'package:codepur/pages/login_page.dart';
+import 'package:codepur/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,9 +22,9 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
       routes: {
-        '/': (context) => Login(),
-        '/home': (context) => HomePage(),
-        '/login': (context) => Login()
+        MyRoutes.loginRoute: (context) => Login(),
+        MyRoutes.HomeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => Login()
       },
     );
   }
