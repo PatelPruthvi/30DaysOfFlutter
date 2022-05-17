@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, body_might_complete_normally_nullable
 
 import 'package:codepur/utils/routes.dart';
 import 'package:flutter/material.dart';
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(height: 40),
                     Material(
                       color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(changedButt ? 50 : 8),
+                      borderRadius: BorderRadius.circular(changedButt ? 20 : 8),
                       child: InkWell(
                         onTap: () async {
                           moveTonext(context);
@@ -114,18 +114,7 @@ class _HomePageState extends State<HomePage> {
                                     )),
                         ),
                       ),
-                    )
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     Navigator.pushReplacementNamed(context, MyRoutes.loginRoute);
-                    //   },
-                    //   child: Text(
-                    //     'SIGN-IN',
-                    //     style:
-                    //         TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    //   ),
-                    //   style: TextButton.styleFrom(minimumSize: Size(150, 40)),
-                    // )
+                    ),
                   ],
                 ),
               )

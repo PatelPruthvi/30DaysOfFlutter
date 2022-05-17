@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:codepur/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -12,19 +13,21 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Material(
-        child: Center(
-            child: Text(
-          'Login Page',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.blue[700],
-            fontSize: 12.0,
-          ),
-          textScaleFactor: 2.0,
-        )),
+    return Scaffold(
+      drawer: MyDrawer(),
+      appBar: AppBar(
+        title: Text('Catalogue App'),
       ),
+      body: Center(
+          child: Text(
+        'Welcome to 30 days of flutter ',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: Colors.blue[700],
+          fontSize: 12.0,
+        ),
+        textScaleFactor: 2.0,
+      )),
     );
   }
 }
