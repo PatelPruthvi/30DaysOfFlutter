@@ -16,7 +16,9 @@ class _LoginState extends State<Login> {
     return Scaffold(
       drawer: MyDrawer(),
       appBar: AppBar(
-        title: Text('Catalogue App'),
+        title: Text(
+          'Catalogue App',
+        ),
       ),
       body: Center(
           child: Text(

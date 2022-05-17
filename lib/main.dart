@@ -3,6 +3,7 @@
 import 'package:codepur/pages/home_page.dart';
 import 'package:codepur/pages/login_page.dart';
 import 'package:codepur/utils/routes.dart';
+import 'package:codepur/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,10 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.loginRoute,
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        fontFamily: GoogleFonts.lato().fontFamily,
-      ),
+      theme: MyTheme.themeData,
       routes: {
         MyRoutes.loginRoute: (context) => Login(),
         MyRoutes.HomeRoute: (context) => HomePage(),
