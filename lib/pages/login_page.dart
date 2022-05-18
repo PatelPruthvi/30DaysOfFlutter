@@ -22,7 +22,7 @@ class _LoginState extends State<Login> {
       ),
       body: Center(
           child: Text(
-        'Welcome to 30 days of flutter ',
+        context.runtimeType.toString(),
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.blue[700],

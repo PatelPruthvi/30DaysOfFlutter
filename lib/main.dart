@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.loginRoute,
+      debugShowCheckedModeBanner: false,
       theme: MyTheme.themeData,
       routes: {
         MyRoutes.loginRoute: (context) => Login(),
