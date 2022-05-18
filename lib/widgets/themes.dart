@@ -14,6 +14,8 @@ class MyTheme {
               fontSize: 20,
             )),
         primarySwatch: Colors.deepPurple,
-        fontFamily: GoogleFonts.lato().fontFamily,
+        fontFamily: GoogleFonts.poppins().fontFamily,
       );
+  static Color creamColour = Color(0xfff5f5f5);
+  static Color darkBlue = Color(0xff403b58);
 }
