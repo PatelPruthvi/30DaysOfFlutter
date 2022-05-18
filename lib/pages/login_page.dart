@@ -44,11 +44,38 @@ class _LoginState extends State<Login> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-            ? ListView.builder(
+            ? GridView.builder(
                 itemCount: CatalogModel.items.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  mainAxisSpacing: 14,
+                  crossAxisSpacing: 14,
+                  crossAxisCount: 2,
+                ),
                 itemBuilder: (context, index) {
-                  return ItemWidget(
-                    item: CatalogModel.items[index],
+                  final item = CatalogModel.items[index];
+                  return Card(
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    child: GridTile(
+                      header: Container(
+                          decoration: BoxDecoration(color: Colors.deepPurple),
+                          padding: EdgeInsets.all(12.0),
+                          child: Text(
+                            item.name,
+                            style: TextStyle(color: Colors.white),
+                          )),
+                      child: Image.network(
+                        item.image,
+                      ),
+                      footer: Container(
+                          decoration: BoxDecoration(color: Colors.black),
+                          padding: EdgeInsets.all(12.0),
+                          child: Text(
+                            item.price.toString(),
+                            style: TextStyle(color: Colors.white),
+                          )),
+                    ),
                   );
                 },
               )
