@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:codepur/models/catalog.dart';
 import 'package:codepur/widgets/drawer.dart';
+import 'package:codepur/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -11,6 +13,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final DummyList = List.generate(20, (index) => CatalogModel.items[0]);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,16 +23,17 @@ class _LoginState extends State<Login> {
           'Catalogue App',
         ),
       ),
-      body: Center(
-          child: Text(
-        context.runtimeType.toString(),
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Colors.blue[700],
-          fontSize: 12.0,
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: DummyList.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: DummyList[index],
+            );
+          },
         ),
-        textScaleFactor: 2.0,
-      )),
+      ),
     );
   }
 }
