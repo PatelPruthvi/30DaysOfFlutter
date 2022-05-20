@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, deprecated_member_use, camel_case_types
 
+import 'package:codepur/models/cart.dart';
 import 'package:codepur/models/catalog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +45,7 @@ class _cartTotal extends StatelessWidget {
       height: 200,
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         Text(
-          '\$9999',
+          '\$ ${CartModel().totalPrice}',
           style: TextStyle(fontSize: 26, color: Theme.of(context).accentColor),
         ),
         SizedBox(width: 20),
@@ -76,12 +77,12 @@ class __cartListState extends State<_cartList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: CatalogModel.items.length,
+        itemCount: CartModel().items.length,
         itemBuilder: (context, index) => ListTile(
               leading: Icon(Icons.done),
               trailing: IconButton(
                   icon: Icon(Icons.remove_circle_outline), onPressed: () {}),
-              title: Text(CatalogModel.items[index].name),
+              title: Text(CartModel().items[index].name),
             ));
   }
 }

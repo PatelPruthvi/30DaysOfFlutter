@@ -1,5 +1,6 @@
-// ignore_for_file: non_constant_identifier_names, deprecated_member_use
+// ignore_for_file: non_constant_identifier_names, deprecated_member_use, prefer_const_constructors, unused_local_variable
 
+import 'package:codepur/models/cart.dart';
 import 'package:codepur/models/catalog.dart';
 import 'package:codepur/pages/home_detail.dart';
 import 'package:codepur/widgets/home_widgets/Catalog_image.dart';
@@ -73,16 +74,8 @@ class CatalogItem extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                             color: Theme.of(context).accentColor)),
-                    ElevatedButton.icon(
-                      style: ButtonStyle(
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20))),
-                          backgroundColor: MaterialStateProperty.all(
-                              Theme.of(context).buttonColor)),
-                      onPressed: () {},
-                      label: Text('Add'),
-                      icon: Icon(CupertinoIcons.cart_badge_plus),
+                    _addtoCart(
+                      catalog: Catalogue,
                     )
                   ],
                 ),
@@ -91,6 +84,39 @@ class CatalogItem extends StatelessWidget {
           ))
         ]),
       ),
+    );
+  }
+}
+
+class _addtoCart extends StatefulWidget {
+  final Item catalog;
+
+  const _addtoCart({Key? key, required this.catalog}) : super(key: key);
+
+  @override
+  State<_addtoCart> createState() => _addtoCartState();
+}
+
+class _addtoCartState extends State<_addtoCart> {
+  bool change = false;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton.icon(
+      style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+          backgroundColor:
+              MaterialStateProperty.all(Theme.of(context).buttonColor)),
+      onPressed: () {
+        change = !change;
+        final catalog = CatalogModel();
+        final cart = CartModel();
+        cart.catalog = catalog;
+        cart.add(widget.catalog);
+        setState(() {});
+      },
+      label: change ? Text('') : Text('Add'),
+      icon: Icon(CupertinoIcons.cart_badge_plus),
     );
   }
 }
