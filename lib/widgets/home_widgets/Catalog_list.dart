@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, deprecated_member_use
 
 import 'package:codepur/models/catalog.dart';
 import 'package:codepur/pages/home_detail.dart';
@@ -16,7 +16,7 @@ class CatalogList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.items[index];
+        final catalog = CatalogModel.getByPosition(index);
         return InkWell(
             onTap: () => Navigator.push(
                 context,

@@ -1,13 +1,11 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
 import 'package:codepur/pages/cart_page.dart';
-import 'package:codepur/pages/home_detail.dart';
 import 'package:codepur/pages/home_page.dart';
 import 'package:codepur/pages/login_page.dart';
 import 'package:codepur/utils/routes.dart';
 import 'package:codepur/widgets/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.system,
       darkTheme: MyTheme.darkTheme(context),
-      initialRoute: MyRoutes.HomeRoute,
+      initialRoute: MyRoutes.loginRoute,
       debugShowCheckedModeBanner: false,
       theme: MyTheme.themeData,
       routes: {

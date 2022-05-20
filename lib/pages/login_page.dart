@@ -67,7 +67,9 @@ class _LoginState extends State<Login> {
               else
                 Expanded(
                   child: Center(
-                    child: CircularProgressIndicator(),
+                    child: CircularProgressIndicator(
+                      color: Theme.of(context).buttonColor,
+                    ),
                   ),
                 )
             ],
