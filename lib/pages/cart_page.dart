@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors, deprecated_member_use
+// ignore_for_file: prefer_const_constructors, deprecated_member_use, camel_case_types
 
+import 'package:codepur/models/catalog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +53,12 @@ class _cartTotal extends StatelessWidget {
                 shape: MaterialStateProperty.all(StadiumBorder()),
                 backgroundColor:
                     MaterialStateProperty.all(Theme.of(context).buttonColor)),
-            onPressed: () {},
+            onPressed: () {
+              const s = SnackBar(
+                  duration: Duration(seconds: 1),
+                  content: Text('Buying Not Supported Yet'));
+              ScaffoldMessenger.of(context).showSnackBar(s);
+            },
             child: Text('Buy')),
       ]),
     );
@@ -70,12 +76,12 @@ class __cartListState extends State<_cartList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 5,
+        itemCount: CatalogModel.items.length,
         itemBuilder: (context, index) => ListTile(
               leading: Icon(Icons.done),
               trailing: IconButton(
                   icon: Icon(Icons.remove_circle_outline), onPressed: () {}),
-              title: Text('item1'),
+              title: Text(CatalogModel.items[index].name),
             ));
   }
 }
