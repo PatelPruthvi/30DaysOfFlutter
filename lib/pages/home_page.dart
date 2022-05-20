@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, body_might_complete_normally_nullable
 
 import 'package:codepur/utils/routes.dart';
+import 'package:codepur/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -32,7 +33,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Catalogue App'),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Form(

@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
+import 'package:codepur/pages/home_detail.dart';
 import 'package:codepur/pages/home_page.dart';
 import 'package:codepur/pages/login_page.dart';
 import 'package:codepur/utils/routes.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       routes: {
         MyRoutes.loginRoute: (context) => Login(),
         MyRoutes.HomeRoute: (context) => HomePage(),
-        MyRoutes.loginRoute: (context) => Login()
+        MyRoutes.loginRoute: (context) => Login(),
+        //MyRoutes.detailRoute: (context) => HomeDetail()
       },
     );
   }
