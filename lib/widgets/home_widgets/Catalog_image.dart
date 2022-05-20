@@ -14,9 +14,11 @@ class CatalogImage extends StatelessWidget {
           padding: EdgeInsets.all(8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Colors.grey[200],
+            color: Theme.of(context).canvasColor,
           ),
-          child: Image.network(img)),
+          child: Image.network(
+            img,
+          )),
     );
   }
 }

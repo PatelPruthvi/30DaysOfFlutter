@@ -18,14 +18,14 @@ class Catalogheader extends StatelessWidget {
             style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
-                color: MyTheme.darkBlue),
+                color: Theme.of(context).accentColor),
           ),
           Text(
             'Trending Products ',
             style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: MyTheme.darkBlue),
+                color: Theme.of(context).accentColor),
           )
         ],
       ),

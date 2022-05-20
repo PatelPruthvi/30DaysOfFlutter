@@ -38,13 +38,16 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Theme.of(context).canvasColor,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: MyTheme.darkBlue,
+        backgroundColor: Theme.of(context).buttonColor,
         onPressed: () {
           Navigator.pushNamed(context, MyRoutes.cartRoute);
         },
-        child: Icon(CupertinoIcons.cart),
+        child: Icon(
+          CupertinoIcons.cart,
+          color: Colors.white,
+        ),
       ),
       body: SafeArea(
         top: false,

@@ -23,12 +23,13 @@ class HomeDetail extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
-                    color: Colors.deepPurple[500])),
+                    color: Theme.of(context).buttonColor)),
             ElevatedButton.icon(
               style: ButtonStyle(
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20))),
-                  backgroundColor: MaterialStateProperty.all(MyTheme.darkBlue)),
+                  backgroundColor:
+                      MaterialStateProperty.all(Theme.of(context).buttonColor)),
               onPressed: () {},
               label: Text('Add to cart'),
               icon: Icon(CupertinoIcons.cart_badge_plus),
@@ -37,9 +38,9 @@ class HomeDetail extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Theme.of(context).canvasColor,
       ),
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Theme.of(context).canvasColor,
       body: Column(children: [
         Hero(
             tag: Key(Catalog.id.toString()),
@@ -56,7 +57,7 @@ class HomeDetail extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
                   shape: BoxShape.rectangle,
-                  color: Colors.white,
+                  color: Theme.of(context).cardColor,
                 ),
                 child: Column(
                   children: [
@@ -68,18 +69,18 @@ class HomeDetail extends StatelessWidget {
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 30,
-                            color: MyTheme.darkBlue),
+                            color: Theme.of(context).accentColor),
                       ),
                     )),
                     Text(Catalog.desc,
                         style:
-                            TextStyle(fontSize: 20, color: Colors.grey[700])),
+                            TextStyle(fontSize: 20, color: Colors.grey[600])),
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Text(
                           'Ipsum kasd diam tempor justo accusam gubergren, invidunt ea sit sanctus justo ut. Accusam at eos takimata sadipscing et elitr amet ipsum, et aliquyam erat clita magna ipsum lorem. Duo at no sit justo labore gubergren invidunt. Ea voluptua et.',
                           style:
-                              TextStyle(fontSize: 14, color: Colors.grey[700])),
+                              TextStyle(fontSize: 14, color: Colors.grey[600])),
                     ),
                   ],
                 )))

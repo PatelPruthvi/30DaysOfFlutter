@@ -36,7 +36,7 @@ class CatalogItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey[200],
+      color: Theme.of(context).canvasColor,
       width: 300,
       height: 140,
       // ignore: prefer_const_literals_to_create_immutables
@@ -58,7 +58,7 @@ class CatalogItem extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
-                        color: MyTheme.darkBlue)),
+                        color: Theme.of(context).accentColor)),
               ),
               Text(Catalogue.desc,
                   style: TextStyle(fontSize: 12, color: Colors.grey[700])),
@@ -72,14 +72,14 @@ class CatalogItem extends StatelessWidget {
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
-                            color: MyTheme.darkBlue)),
+                            color: Theme.of(context).accentColor)),
                     ElevatedButton.icon(
                       style: ButtonStyle(
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20))),
-                          backgroundColor:
-                              MaterialStateProperty.all(MyTheme.darkBlue)),
+                          backgroundColor: MaterialStateProperty.all(
+                              Theme.of(context).buttonColor)),
                       onPressed: () {},
                       label: Text('Add'),
                       icon: Icon(CupertinoIcons.cart_badge_plus),

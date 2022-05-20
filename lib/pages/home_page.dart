@@ -31,10 +31,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Catalogue App'),
+        title: Text(
+          'Catalogue App',
+          style: TextStyle(color: Theme.of(context).accentColor),
+        ),
       ),
       drawer: MyDrawer(),
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).canvasColor,
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
