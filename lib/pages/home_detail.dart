@@ -30,13 +30,15 @@ class HomeDetail extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20))),
                   backgroundColor: MaterialStateProperty.all(MyTheme.darkBlue)),
               onPressed: () {},
-              label: Text('Buy'),
+              label: Text('Add to cart'),
               icon: Icon(CupertinoIcons.cart_badge_plus),
             )
           ],
         ),
       ),
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.grey[200],
+      ),
       backgroundColor: Colors.grey[200],
       body: Column(children: [
         Hero(
@@ -71,7 +73,14 @@ class HomeDetail extends StatelessWidget {
                     )),
                     Text(Catalog.desc,
                         style:
-                            TextStyle(fontSize: 18, color: Colors.grey[700])),
+                            TextStyle(fontSize: 20, color: Colors.grey[700])),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                          'Ipsum kasd diam tempor justo accusam gubergren, invidunt ea sit sanctus justo ut. Accusam at eos takimata sadipscing et elitr amet ipsum, et aliquyam erat clita magna ipsum lorem. Duo at no sit justo labore gubergren invidunt. Ea voluptua et.',
+                          style:
+                              TextStyle(fontSize: 14, color: Colors.grey[700])),
+                    ),
                   ],
                 )))
       ]),

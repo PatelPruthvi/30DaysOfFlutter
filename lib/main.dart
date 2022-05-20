@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
+import 'package:codepur/pages/cart_page.dart';
 import 'package:codepur/pages/home_detail.dart';
 import 'package:codepur/pages/home_page.dart';
 import 'package:codepur/pages/login_page.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.loginRoute: (context) => Login(),
         MyRoutes.HomeRoute: (context) => HomePage(),
         MyRoutes.loginRoute: (context) => Login(),
+        MyRoutes.cartRoute: (context) => cartPage()
         //MyRoutes.detailRoute: (context) => HomeDetail()
       },
     );

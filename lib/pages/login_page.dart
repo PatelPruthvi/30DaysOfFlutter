@@ -1,8 +1,11 @@
 // ignore_for_file: prefer_const_constructors, unused_local_variable, non_constant_identifier_names, unnecessary_null_comparison
 
 import 'package:codepur/models/catalog.dart';
+import 'package:codepur/utils/routes.dart';
 import 'package:codepur/widgets/home_widgets/CatalogHeader.dart';
 import 'package:codepur/widgets/home_widgets/Catalog_list.dart';
+import 'package:codepur/widgets/themes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -36,7 +39,15 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: MyTheme.darkBlue,
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.cartRoute);
+        },
+        child: Icon(CupertinoIcons.cart),
+      ),
       body: SafeArea(
+        top: false,
         child: Container(
           padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
           child: Column(
@@ -47,7 +58,7 @@ class _LoginState extends State<Login> {
               if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
                 Expanded(
                     child: Padding(
-                  padding: const EdgeInsets.only(top: 15.0),
+                  padding: const EdgeInsets.only(top: 15.0, bottom: 65),
                   child: CatalogList(),
                 ))
               else

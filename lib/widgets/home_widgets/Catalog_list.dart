@@ -81,7 +81,7 @@ class CatalogItem extends StatelessWidget {
                           backgroundColor:
                               MaterialStateProperty.all(MyTheme.darkBlue)),
                       onPressed: () {},
-                      label: Text('Buy'),
+                      label: Text('Add'),
                       icon: Icon(CupertinoIcons.cart_badge_plus),
                     )
                   ],
