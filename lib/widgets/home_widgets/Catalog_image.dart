@@ -11,7 +11,7 @@ class CatalogImage extends StatelessWidget {
       padding: const EdgeInsets.all(12.0),
       child: Container(
           width: 120,
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Theme.of(context).canvasColor,

@@ -1,14 +1,13 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, non_constant_identifier_names
 
 import 'package:codepur/models/catalog.dart';
-import 'package:codepur/widgets/themes.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:codepur/widgets/home_widgets/add_to_cart.dart';
 import 'package:flutter/material.dart';
 
 class HomeDetail extends StatelessWidget {
-  final Item Catalog;
+  final Item Catalogue;
 
-  const HomeDetail({Key? key, required this.Catalog}) : super(key: key);
+  const HomeDetail({Key? key, required this.Catalogue}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,21 +18,12 @@ class HomeDetail extends StatelessWidget {
           alignment: MainAxisAlignment.spaceBetween,
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Text('\$${Catalog.price.toString()}',
+            Text('\$${Catalogue.price.toString()}',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
                     color: Theme.of(context).buttonColor)),
-            ElevatedButton.icon(
-              style: ButtonStyle(
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20))),
-                  backgroundColor:
-                      MaterialStateProperty.all(Theme.of(context).buttonColor)),
-              onPressed: () {},
-              label: Text('Add to cart'),
-              icon: Icon(CupertinoIcons.cart_badge_plus),
-            )
+            AddToCart(catalog: Catalogue)
           ],
         ),
       ),
@@ -43,11 +33,11 @@ class HomeDetail extends StatelessWidget {
       backgroundColor: Theme.of(context).canvasColor,
       body: Column(children: [
         Hero(
-            tag: Key(Catalog.id.toString()),
+            tag: Key(Catalogue.id.toString()),
             child: Padding(
               padding: const EdgeInsets.all(2.0),
               child: Image.network(
-                Catalog.image,
+                Catalogue.image,
                 height: 300,
               ),
             )),
@@ -65,14 +55,14 @@ class HomeDetail extends StatelessWidget {
                         child: Padding(
                       padding: const EdgeInsets.only(top: 20.0),
                       child: Text(
-                        Catalog.name,
+                        Catalogue.name,
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 30,
                             color: Theme.of(context).accentColor),
                       ),
                     )),
-                    Text(Catalog.desc,
+                    Text(Catalogue.desc,
                         style:
                             TextStyle(fontSize: 20, color: Colors.grey[600])),
                     Padding(

@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors, deprecated_member_use, camel_case_types
 
 import 'package:codepur/models/cart.dart';
-import 'package:codepur/models/catalog.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class cartPage extends StatelessWidget {
@@ -74,15 +72,26 @@ class _cartList extends StatefulWidget {
 }
 
 class __cartListState extends State<_cartList> {
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: CartModel().items.length,
-        itemBuilder: (context, index) => ListTile(
-              leading: Icon(Icons.done),
-              trailing: IconButton(
-                  icon: Icon(Icons.remove_circle_outline), onPressed: () {}),
-              title: Text(CartModel().items[index].name),
-            ));
+    return _cart.items.isEmpty
+        ? Center(
+            child: Text(
+            'Nothing to show',
+            textScaleFactor: 2.0,
+          ))
+        : ListView.builder(
+            itemCount: CartModel().items.length,
+            itemBuilder: (context, index) => ListTile(
+                  leading: Icon(Icons.done),
+                  trailing: IconButton(
+                      icon: Icon(Icons.remove_circle_outline),
+                      onPressed: () {
+                        _cart.remove(_cart.items[index]);
+                        setState(() {});
+                      }),
+                  title: Text(CartModel().items[index].name),
+                ));
   }
 }

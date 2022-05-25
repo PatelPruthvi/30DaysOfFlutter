@@ -4,7 +4,6 @@ import 'package:codepur/models/catalog.dart';
 import 'package:codepur/utils/routes.dart';
 import 'package:codepur/widgets/home_widgets/CatalogHeader.dart';
 import 'package:codepur/widgets/home_widgets/Catalog_list.dart';
-import 'package:codepur/widgets/themes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
