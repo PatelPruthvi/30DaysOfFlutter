@@ -1,16 +1,34 @@
-# codepur
+# 30DaysOfFlutter
 
-A new Flutter project.
+MY First Flutter Project, just getting the basics right. Learned about different widgets and models in flutter.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+Before you begin, ensure you have met the following requirements:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [Flutter SDK](https://flutter.dev/docs/get-started/install)
+- [Git](https://git-scm.com/downloads)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Installation
+
+Follow these steps to install and run the app:
+
+1. **Clone the repository:**
+
+   ```bash
+   $ git clone https://github.com/PatelPruthvi/30DaysOfFlutter.git
+
+2. **Navigate to Project Directory**
+   
+   ```bash
+   $ cd 30DaysOfFlutter
+3. **Install dependencies**
+   
+   ```bash
+   $ flutter pub get
+4. **Run application**
+
+   ```bash
+   $ flutter run
